@@ -1,12 +1,26 @@
 ---
-title: "AirBNB"
+title: "AirBNB Property Analysis"
 author: "Kim Nguyen"
 date: "2024-08-10"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 
+## Main Objectives
+
+The objective is to answer the question: Is it more advantageous to keep current properties and rent it out, or should the property be sold, considering current trends?
+
+In order to answer this question, there are multiple angles that need to be considered, including, but not limited to:
+
+-   The demographic trend (race, age, class, etc.) of the areas surrounding the properties
+
+-   The demographic of the renter + home buyer market
+
+-   The return on investment (ROI) of the current properties
+
+-   The housing market trend of the areas surrounding the properties
