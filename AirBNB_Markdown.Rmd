@@ -1,7 +1,7 @@
 ---
 title: "AirBNB Property Analysis"
 author: "Kim Nguyen"
-date: "2024-08-10"
+date: "`r Sys.Date()`"
 output:
   pdf_document: default
   html_document: default
@@ -11,16 +11,39 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Main Objectives
+## Main Goal
 
-The objective is to answer the question: Is it more advantageous to keep current properties and rent it out, or should the property be sold, considering current trends?
+Throughout this internship, I will be analyzing multiple data sets in order to answer the question: Is it more advantageous to keep current properties and rent it out, or should the property be sold? In order to answer this question, there are multiple data sets that need to be analyzed:
 
-In order to answer this question, there are multiple angles that need to be considered, including, but not limited to:
+| Data Set Name | Purpose                                     |
+|---------------|---------------------------------------------|
+| idk           | testing: this is to get a sense of the area |
+|               |                                             |
+|               |                                             |
 
--   The demographic trend (race, age, class, etc.) of the areas surrounding the properties
+As this project naturally has many layers, I will be dividing up the project into [insert number] sections.
 
--   The demographic of the renter + home buyer market
+# Demographics of Seattle
 
--   The return on investment (ROI) of the current properties
+<https://depts.washington.edu/covenants/homeownership_king.shtml#>: talks about the demographics of homeowners around the Seattle area
 
--   The housing market trend of the areas surrounding the properties
+-   maybe also look at class, not just race
+
+# Selling the Property
+
+Zillow data frames (median prices of the properties that go up + the unique properties that are put up every month starting from 2018)
+
+-   Conduct analysis on how many houses have gone up + the price of median prices and make it into a chart?
+
+-   conclusion: although we can see how it went up, we also have to consider that this accounts for the majority of Seattle, and not just the specific areas in Seattle, nor the specific model of the house
+
+```{r, warning=FALSE}
+# call all libraries needed
+
+library(dplyr)
+```
+
+```{r}
+unique_listing <- read.csv("dataset/unique_listings_month.csv") %>%
+  filter(StateName == "WA")
+```
