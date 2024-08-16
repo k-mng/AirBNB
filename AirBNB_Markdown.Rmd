@@ -8,18 +8,18 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 ```
 
 ## Main Goal
 
 Throughout this internship, I will be analyzing multiple data sets in order to answer the question: Is it more advantageous to keep current properties and rent it out, or should the property be sold? In order to answer this question, there are multiple data sets that need to be analyzed:
 
-| Data Set Name | Purpose                                     |
-|---------------|---------------------------------------------|
-| idk           | testing: this is to get a sense of the area |
-|               |                                             |
-|               |                                             |
+| Data Set Name  | Purpose                                                                                                                                                                                                                                                           |
+|------------------|------------------------------------------------------|
+| unique_listing | Sourced from <https://www.zillow.com/research/data/>. Data set contains count of all unique listings that were active at any time in the given month; all counts categorized by city, taken at the end of the month. Listings start from March 2018 to July 2024. |
+| median_pricing | Sourced from <https://www.zillow.com/research/data/>. Data set shows the median prices of all listings categorized by city; all counts taken at the end of the month. Listings start from March 2018 to July 2024.                                                |
+|                |                                                                                                                                                                                                                                                                   |
 
 As this project naturally has many layers, I will be dividing up the project into [insert number] sections.
 
@@ -45,5 +45,8 @@ library(dplyr)
 
 ```{r}
 unique_listing <- read.csv("dataset/unique_listings_month.csv") %>%
+  filter(StateName =="WA")
+
+median_pricing <- read.csv("dataset/medianprice_listings_month.csv") %>% 
   filter(StateName == "WA")
 ```
